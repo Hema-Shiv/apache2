@@ -4,12 +4,7 @@ pipeline{
     DOCKERHUB_CREDENTIALS = credentials('dockerhub')
     }
     stages{
-       stage('Git Checkout Stage'){
-            steps{
-               checkout scm
-            }
-         }        
-       stage('Build docker image'){
+         stage('Build docker image'){
             steps{
                 sh 'docker build -t hemaj/ubuntu:$BUILD_NUMBER . '
             }
