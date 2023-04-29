@@ -6,4 +6,5 @@ RUN apt-get update && \
 # Stage 2: Final image
 FROM ubuntu
 COPY --from=builder /usr/sbin/apache2 /usr/sbin/apache2
+EXPOSE 80
 CMD ["apache2", "-DFOREGROUND"]
