@@ -1,4 +1,3 @@
-age 1: Build Apache
 FROM ubuntu AS builder
 RUN apt-get update && \
     apt-get install -y apache2
