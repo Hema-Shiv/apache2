@@ -4,6 +4,11 @@ pipeline{
     DOCKERHUB_CREDENTIALS = credentials('dockerhub')
     }
     stages{
+        stage('Build docker image'){
+            steps{
+        checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Hema-Shiv/apache2.git']])
+            }
+        }
          stage('Build docker image'){
             steps{
                 sh 'docker build -t hemaj/ubuntu:$BUILD_NUMBER . '
